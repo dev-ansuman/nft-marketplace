@@ -1,10 +1,17 @@
-import Image from "next/image";
+import BrowseCategoriesSection from "@/components/sections/BrowseCategoriesSection";
+import DiscoverMoreNFTsSection from "@/components/sections/DiscoverMoreNFTsSection";
+import HowItWorksSection from "@/components/sections/HowItWorksSection";
+import TopCreatorsSection from "@/components/sections/TopCreatorsSection";
+import WeeklyDigestSection from "@/components/sections/WeeklyDigestSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-      </main>
-    </div>
+    <main>
+      <TopCreatorsSection />
+      <BrowseCategoriesSection />
+      <DiscoverMoreNFTsSection />
+      <HowItWorksSection />
+      <WeeklyDigestSection />
+    </main>
   );
 }

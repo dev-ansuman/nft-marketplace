@@ -10,7 +10,7 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 text-white bg-[#2B2B2B] pl-[50px] pr-[50px] pt-[20px] pb-[20px] font-bold">
+        <header className="text-white bg-[#2B2B2B] pl-[50px] pr-[50px] pt-[20px] pb-[20px] font-bold">
             <nav className="mx-auto flex items-center justify-between">
 
                 <Link href="/" className="text-[22px] tracking-tighter flex gap-3 font-space">
@@ -21,25 +21,22 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center justify-end gap-[10px] relative w-fit h-auto">
                     <>
                         <Button
-                            variant="ghost"
-                            className="tracking-wide pl-[20px] pr-[20px] font-bold text-[15px]">
+                            className="tracking-wide pl-[20px] pr-[20px] font-bold text-[15px] bg-transparent transition-transform hover:scale-[0.97]">
                             Marketplace
                         </Button>
                         <Button
-                            variant="ghost"
-                            className="tracking-wide hover:bg-neutral-800 pl-[20px] pr-[20px] font-bold text-[15px]"
+                            className="tracking-wide pl-[20px] pr-[20px] font-bold text-[15px] bg-transparent transition-transform hover:scale-[0.97]"
                         >
                             Rankings
                         </Button>
                         <Button
-                            variant="ghost"
-                            className="tracking-wide pl-[20px] pr-[20px] font-bold text-[15px]"
+                            className="tracking-wide pl-[20px] pr-[20px] font-bold text-[15px] bg-transparent transition-transform hover:scale-[0.97]"
                         >
                             Connect a wallet
                         </Button>
                         <Button
                             size="lg"
-                            className="bg-[#A259FF] tracking-wide hover:bg-neutral-800 pr-[30px] pl-[30px] pt-[10px] pb-[10px] flex gap-3 h-15 rounded-3xl font-bold text-[15px]"
+                            className="bg-[#A259FF] tracking-wide pr-[30px] pl-[30px] pt-[10px] pb-[10px] flex gap-3 h-15 rounded-3xl font-bold text-[15px] transition-transform hover:scale-[0.97]"
                         >
                             <Image src="/icons/button_icons/User.svg" alt='user' height={20} width={20} />
                             Sign Up

@@ -31,7 +31,7 @@ export default function RootLayout({
       lang="en"
       className={`${spaceMono.variable} ${workSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-work">
+      <body className="min-h-full flex flex-col font-work bg-[#2B2B2B]">
         <Navbar />
         {children}
         <Footer />

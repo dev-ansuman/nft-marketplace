@@ -37,7 +37,7 @@ export default function Footer() {
                         <div>Get exclusive promotions & updates straight to your inbox.</div>
                         <div>
                             <input type="text" className='bg-white' />
-                            <Button className='bg-[#A259FF]'>Subscribe</Button>
+                            <Button className='bg-[#A259FF] transition-transform hover:scale-[0.97]'>Subscribe</Button>
                         </div>
                     </div>
                 </div>
