@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Rocket } from "lucide-react";
+import SpaceWalkCard from "../SpaceWalkCard";
 
 const animation = '/trendingSection/animation.gif';
 
@@ -49,8 +50,10 @@ export default function DiscoverDigitalArtSection() {
                         fill
                         priority
                         unoptimized
-                        className="object-cover"
+                        className="object-cover cursor-pointer"
                     />
+
+                    {/* < SpaceWalkCard /> */}
                 </div>
 
             </div>
