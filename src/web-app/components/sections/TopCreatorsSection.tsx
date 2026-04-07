@@ -1,5 +1,8 @@
+'use client'
+
 import Image from 'next/image';
 import { Rocket } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const cards = {
     card1: {
@@ -77,7 +80,13 @@ export default function TopCreatorsSection() {
     const cardData = Object.values(cards);
 
     return (
-        <section className="bg-[#2B2B2B] px-10 py-20 text-white">
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true }}
+
+            className="bg-[#2B2B2B] px-10 py-20 text-white">
             <div className="max-w-[1050px] mx-auto">
 
                 <div className="mb-10 flex flex-col items-end justify-between md:flex-row md:items-center">
@@ -117,6 +126,6 @@ export default function TopCreatorsSection() {
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

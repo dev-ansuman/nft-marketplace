@@ -1,11 +1,20 @@
+'use client'
+
 import Image from 'next/image';
 import { Eye } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const backgroundImage = '/trendingSection/mushroom.png';
 
 export default function MagicMashroomsSection() {
     return (
-        <section className="relative w-full h-[600px] overflow-hidden rounded-3xl">
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true }}
+
+            className="relative w-full h-[600px] overflow-hidden rounded-3xl">
             <div className="absolute inset-0 z-0">
                 <Image
                     src={backgroundImage}
@@ -54,6 +63,6 @@ export default function MagicMashroomsSection() {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

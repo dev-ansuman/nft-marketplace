@@ -1,4 +1,7 @@
+'use client'
+
 import Image from "next/image";
+import { motion } from 'framer-motion';
 
 const cards = {
     cardA: {
@@ -20,7 +23,13 @@ const cards = {
 
 export default function HowItWorksSection() {
     return (
-        <section className="bg-[#2B2B2B] py-20 px-10">
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true }}
+
+            className="bg-[#2B2B2B] py-20 px-10">
             <div className="max-w-[1050px] mx-auto">
                 <div className="mb-12">
                     <h2 className="text-3xl font-bold text-white mb-2 font-work">How It Works</h2>
@@ -53,6 +62,6 @@ export default function HowItWorksSection() {
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

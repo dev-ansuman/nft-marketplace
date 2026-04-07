@@ -1,10 +1,19 @@
+'use client'
+
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Mail } from "lucide-react";
+import { motion } from 'framer-motion';
 
 export default function WeeklyDigestSection() {
     return (
-        <section className="bg-[#2B2B2B] py-20 px-8">
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true }}
+
+            className="bg-[#2B2B2B] py-20 px-8">
             <div className="max-w-[1050px] mx-auto bg-[#3B3B3B] rounded-[30px] p-10 lg:p-14 flex flex-col md:flex-row items-center gap-10 lg:gap-20">
 
                 <div className="w-full md:w-1/2 shrink-0">
@@ -40,6 +49,6 @@ export default function WeeklyDigestSection() {
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

@@ -1,6 +1,9 @@
+'use client'
+
 import { Button } from "../ui/button"
 import Image from "next/image"
 import { Eye } from "lucide-react"
+import { motion } from 'framer-motion';
 
 const cards = {
     cardA: {
@@ -31,7 +34,13 @@ const cards = {
 
 export default function DiscoverMoreNFTsSection() {
     return (
-        <section className="bg-[#2B2B2B] py-20 px-4 md:px-10 lg:px-20">
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true }}
+
+            className="bg-[#2B2B2B] py-20 px-4 md:px-10 lg:px-20">
             <div className="max-w-[1050px] mx-auto">
                 <div className="flex justify-between items-end mb-14 max-w-7xl mx-auto">
                     <div>
@@ -83,6 +92,6 @@ export default function DiscoverMoreNFTsSection() {
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }

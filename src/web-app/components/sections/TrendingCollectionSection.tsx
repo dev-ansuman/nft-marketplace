@@ -1,4 +1,7 @@
+'use client'
+
 import Image from "next/image";
+import { motion } from 'framer-motion';
 
 const cards = {
     card1: {
@@ -38,7 +41,13 @@ const cards = {
 
 export default function TrendingCollectionSection() {
     return (
-        <section className="bg-[#2B2B2B] text-white py-10 px-4 md:px-10 lg:px-20">
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true }}
+
+            className="bg-[#2B2B2B] text-white py-10 px-4 md:px-10 lg:px-20">
             <div className="max-w-[1050px] mx-auto">
                 <h1 className="text-3xl font-semibold mb-2">Trending Collection</h1>
                 <p className="text-lg mb-10">Checkout Our Weekly Updated Trending Collection.</p>
@@ -90,6 +99,6 @@ export default function TrendingCollectionSection() {
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }

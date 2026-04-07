@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image'
+import { motion } from 'framer-motion';
 
 const cards = {
     card1: {
@@ -47,7 +50,13 @@ export default function BrowseCategoriesSection() {
     const cardData = Object.values(cards);
 
     return (
-        <section className="bg-[#2B2B2B] px-10 py-20 text-white">
+        <motion.section
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true }}
+
+            className="bg-[#2B2B2B] px-10 py-20 text-white">
             <div className='max-w-[1050px] mx-auto'>
                 <h2 className="mb-10 text-[32px] font-bold">Browse Categories</h2>
 
@@ -83,6 +92,6 @@ export default function BrowseCategoriesSection() {
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }
