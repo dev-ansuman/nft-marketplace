@@ -109,7 +109,7 @@ export default function TopCreatorsSection() {
                             </div>
                             <div className="text-center">
                                 <h3 className="mb-1 text-[22px] font-bold">{creator.name}</h3>
-                                <p className="text-[#858584] font-space">
+                                <p className="text-[#858584] font-work">
                                     Total Sales: <span className="font-space text-white">{creator.totalSales}</span>
                                 </p>
                             </div>

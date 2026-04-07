@@ -33,7 +33,7 @@ export default function WeeklyDigestSection() {
                             placeholder="Enter your email here"
                             className="w-full bg-white rounded-[20px] px-5 py-4 h-[60px] text-[#2B2B2B] outline-none placeholder:text-[#2B2B2B]/60"
                         />
-                        <Button className="w-full sm:w-auto sm:absolute right-0 bg-[#A259FF] hover:bg-[#8b44e0] rounded-[20px] px-10 h-[60px] flex items-center justify-center gap-3 text-white font-semibold transition-all mt-4 sm:mt-0 hover:scale-[0.97] cursor-pointer">
+                        <Button className="w-full sm:w-auto sm:absolute right-0 bg-[#A259FF] rounded-[20px] px-10 h-[60px] flex items-center justify-center gap-3 text-white font-semibold transition-all mt-4 sm:mt-0 hover:scale-[0.97] cursor-pointer">
                             <Mail className="w-5 h-5" />
                             Subscribe
                         </Button>
