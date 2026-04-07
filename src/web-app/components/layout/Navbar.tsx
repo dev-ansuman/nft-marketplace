@@ -21,22 +21,22 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center justify-end gap-[10px] relative w-fit h-auto">
                     <>
                         <Button
-                            className="tracking-wide pl-[20px] pr-[20px] font-bold text-[15px] bg-transparent transition-transform hover:scale-[0.97]">
+                            className="tracking-wide pl-[20px] pr-[20px] font-bold text-[15px] bg-transparent transition-transform hover:scale-[0.97] cursor-pointer">
                             Marketplace
                         </Button>
                         <Button
-                            className="tracking-wide pl-[20px] pr-[20px] font-bold text-[15px] bg-transparent transition-transform hover:scale-[0.97]"
+                            className="tracking-wide pl-[20px] pr-[20px] font-bold text-[15px] bg-transparent transition-transform hover:scale-[0.97] cursor-pointer"
                         >
                             Rankings
                         </Button>
                         <Button
-                            className="tracking-wide pl-[20px] pr-[20px] font-bold text-[15px] bg-transparent transition-transform hover:scale-[0.97]"
+                            className="tracking-wide pl-[20px] pr-[20px] font-bold text-[15px] bg-transparent transition-transform hover:scale-[0.97] cursor-pointer"
                         >
                             Connect a wallet
                         </Button>
                         <Button
                             size="lg"
-                            className="bg-[#A259FF] tracking-wide pr-[30px] pl-[30px] pt-[10px] pb-[10px] flex gap-3 h-15 rounded-3xl font-bold text-[15px] transition-transform hover:scale-[0.97]"
+                            className="bg-[#A259FF] tracking-wide pr-[30px] pl-[30px] pt-[10px] pb-[10px] flex gap-3 h-15 rounded-3xl font-bold text-[15px] transition-transform hover:scale-[0.97] cursor-pointer"
                         >
                             <Image src="/icons/button_icons/User.svg" alt='user' height={20} width={20} />
                             Sign Up
