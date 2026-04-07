@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Rocket } from 'lucide-react';
 
 const cards = {
     card1: {
@@ -77,41 +78,44 @@ export default function TopCreatorsSection() {
 
     return (
         <section className="bg-[#2B2B2B] px-10 py-20 text-white">
-            <div className="mb-10 flex flex-col items-end justify-between md:flex-row md:items-center">
-                <div>
-                    <h2 className="mb-2 text-[32px] font-bold">Top Creators</h2>
-                    <p className="text-lg">Checkout Top Rated Creators On The NFT Marketplace</p>
-                </div>
-                <button className="mt-5 rounded-2xl border-2 border-[#A259FF] px-8 py-4 font-semibold transition-transform hover:scale-95 md:mt-0">
-                    View Rankings
-                </button>
-            </div>
+            <div className="max-w-[1050px] mx-auto">
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-                {cardData.map((creator, index) => (
-                    <div
-                        key={index}
-                        className="relative flex flex-col items-center rounded-[20px] bg-[#3B3B3B] p-5 transition-transform duration-300 hover:scale-[0.97] cursor-pointer"
-                    >
-                        <div className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#2B2B2B] text-sm text-[#858584]">
-                            {index + 1}
-                        </div>
-                        <div className="relative mb-5 h-[120px] w-[120px]">
-                            <Image
-                                src={creator.icon}
-                                alt={creator.name}
-                                fill
-                                className="rounded-full object-cover"
-                            />
-                        </div>
-                        <div className="text-center">
-                            <h3 className="mb-1 text-[22px] font-bold">{creator.name}</h3>
-                            <p className="text-[#858584] font-space">
-                                Total Sales: <span className="font-space text-white">{creator.totalSales}</span>
-                            </p>
-                        </div>
+                <div className="mb-10 flex flex-col items-end justify-between md:flex-row md:items-center">
+                    <div>
+                        <h2 className="mb-2 text-[32px] font-bold">Top Creators</h2>
+                        <p className="text-lg">Checkout Top Rated Creators On The NFT Marketplace</p>
                     </div>
-                ))}
+                    <button className="mt-5 rounded-2xl border-2 border-[#A259FF] px-8 py-4 font-semibold transition-transform hover:scale-95 md:mt-0 flex gap-4 cursor-pointer">
+                        <Rocket className="w-5 h-5 text-[#A259FF]" /> View Rankings
+                    </button>
+                </div>
+
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    {cardData.map((creator, index) => (
+                        <div
+                            key={index}
+                            className="relative flex flex-col items-center rounded-[20px] bg-[#3B3B3B] p-5 transition-transform duration-300 hover:scale-[0.97] cursor-pointer"
+                        >
+                            <div className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#2B2B2B] text-sm text-[#858584]">
+                                {index + 1}
+                            </div>
+                            <div className="relative mb-5 h-[120px] w-[120px]">
+                                <Image
+                                    src={creator.icon}
+                                    alt={creator.name}
+                                    fill
+                                    className="rounded-full object-cover"
+                                />
+                            </div>
+                            <div className="text-center">
+                                <h3 className="mb-1 text-[22px] font-bold">{creator.name}</h3>
+                                <p className="text-[#858584] font-space">
+                                    Total Sales: <span className="font-space text-white">{creator.totalSales}</span>
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     );
