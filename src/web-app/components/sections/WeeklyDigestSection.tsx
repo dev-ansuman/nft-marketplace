@@ -4,14 +4,15 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { Mail } from "lucide-react";
 import { motion } from 'framer-motion';
+import { sectionReveal } from "@/lib/animations";
 
 export default function WeeklyDigestSection() {
     return (
         <motion.section
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            viewport={{ once: true }}
+            variants={sectionReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
 
             className="bg-[#2B2B2B] py-20 px-8">
             <div className="max-w-[1050px] mx-auto bg-[#3B3B3B] rounded-[30px] p-10 lg:p-14 flex flex-col md:flex-row items-center gap-10 lg:gap-20">
@@ -36,13 +37,13 @@ export default function WeeklyDigestSection() {
                         </p>
                     </div>
 
-                    <div className="relative flex flex-col sm:flex-row items-center">
+                    <div className="flex flex-col sm:flex-row items-stretch gap-3">
                         <input
                             type="email"
                             placeholder="Enter your email here"
-                            className="w-full bg-white rounded-[20px] px-5 py-4 h-[60px] text-[#2B2B2B] outline-none placeholder:text-[#2B2B2B]/60"
+                            className="w-full sm:flex-1 bg-white rounded-[20px] px-5 py-4 h-[60px] text-[#2B2B2B] outline-none placeholder:text-[#2B2B2B]/60"
                         />
-                        <Button className="w-full sm:w-auto sm:absolute right-0 bg-[#A259FF] rounded-[20px] px-10 h-[60px] flex items-center justify-center gap-3 text-white font-semibold transition-all mt-4 sm:mt-0 hover:scale-[0.97] cursor-pointer">
+                        <Button className="w-full sm:w-auto bg-[#A259FF] rounded-[20px] px-10 h-[60px] flex items-center justify-center gap-3 text-white font-semibold transition-all hover:scale-[0.97] cursor-pointer">
                             <Mail className="w-5 h-5" />
                             Subscribe
                         </Button>

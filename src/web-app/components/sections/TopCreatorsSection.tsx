@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Rocket } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { sectionReveal, staggerContainer, staggerItem } from '@/lib/animations';
 
 const cards = {
     card1: {
@@ -81,10 +82,10 @@ export default function TopCreatorsSection() {
 
     return (
         <motion.section
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            viewport={{ once: true }}
+            variants={sectionReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
 
             className="bg-[#2B2B2B] px-10 py-20 text-white">
             <div className="max-w-[1050px] mx-auto">
@@ -99,10 +100,14 @@ export default function TopCreatorsSection() {
                     </button>
                 </div>
 
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <motion.div
+                    variants={staggerContainer}
+                    className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+                >
                     {cardData.map((creator, index) => (
-                        <div
+                        <motion.div
                             key={index}
+                            variants={staggerItem}
                             className="relative flex flex-col items-center rounded-[20px] bg-[#3B3B3B] p-5 transition-transform duration-300 hover:scale-[0.97] cursor-pointer"
                         >
                             <div className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-[#2B2B2B] text-sm text-[#858584]">
@@ -122,9 +127,9 @@ export default function TopCreatorsSection() {
                                     Total Sales: <span className="font-space text-white">{creator.totalSales}</span>
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </motion.section>
     );

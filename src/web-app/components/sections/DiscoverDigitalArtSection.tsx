@@ -5,16 +5,17 @@ import { Button } from "../ui/button";
 import { Rocket } from "lucide-react";
 import SpaceWalkCard from "../SpaceWalkCard";
 import { motion } from 'framer-motion';
+import { sectionReveal } from "@/lib/animations";
 
 const animation = '/trendingSection/animation.gif';
 
 export default function DiscoverDigitalArtSection() {
     return (
         <motion.section
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            viewport={{ once: true }}
+            variants={sectionReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
 
             className="bg-[#2B2B2B] px-8 py-10 lg:py-20">
             <div className="max-w-[1050px] mx-auto flex flex-col md:flex-row gap-8 lg:gap-20">
