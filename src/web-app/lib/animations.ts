@@ -9,8 +9,8 @@ const sectionReveal = {
         y: 0,
         scale: 1,
         transition: {
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1] as const
+            duration: 0.9,
+            ease: [0.24, 1, 0.38, 1] as const
         }
     },
 };
@@ -19,8 +19,8 @@ const staggerContainer = {
     hidden: {},
     visible: {
         transition: {
-            staggerChildren: 0.12,
-            delayChildren: 0.1,
+            staggerChildren: 0.15,
+            delayChildren: 0.2,
         }
     }
 };
@@ -37,7 +37,7 @@ const staggerItem = {
         scale: 1,
         transition: {
             duration: 0.55,
-            ease: [0.22, 1, 0.36, 1] as const
+            ease: [0.24, 1, 0.38, 1] as const
         }
     },
 };
