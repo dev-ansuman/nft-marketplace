@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion';
+import { sectionReveal, staggerContainer, staggerItem } from '@/lib/animations';
 
 const cards = {
     card1: {
@@ -51,19 +52,23 @@ export default function BrowseCategoriesSection() {
 
     return (
         <motion.section
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            viewport={{ once: true }}
+            variants={sectionReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
 
             className="bg-[#2B2B2B] px-10 py-20 text-white">
             <div className='max-w-[1050px] mx-auto'>
                 <h2 className="mb-10 text-[32px] font-bold">Browse Categories</h2>
 
-                <div className="grid grid-cols-2 gap-5 md:grid-cols-4 lg:gap-8">
+                <motion.div
+                    variants={staggerContainer}
+                    className="grid grid-cols-2 gap-5 md:grid-cols-4 lg:gap-8"
+                >
                     {cardData.map((card, index) => (
-                        <div
+                        <motion.div
                             key={index}
+                            variants={staggerItem}
                             className="cursor-pointer overflow-hidden rounded-[20px] bg-[#3B3B3B] transition-transform duration-300 hover:scale-[0.97]"
                         >
                             <div className="relative h-[240px] w-full">
@@ -88,9 +93,9 @@ export default function BrowseCategoriesSection() {
                             <div className="px-5 py-5 text-xl font-semibold lg:px-8 lg:text-[22px]">
                                 {card.title}
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </motion.section>
     )

@@ -4,6 +4,7 @@ import { Button } from "../ui/button"
 import Image from "next/image"
 import { Eye } from "lucide-react"
 import { motion } from 'framer-motion';
+import { sectionReveal, staggerContainer, staggerItem } from "@/lib/animations";
 
 const cards = {
     cardA: {
@@ -35,27 +36,30 @@ const cards = {
 export default function DiscoverMoreNFTsSection() {
     return (
         <motion.section
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            viewport={{ once: true }}
+            variants={sectionReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
 
             className="bg-[#2B2B2B] py-20 px-4 md:px-10 lg:px-20">
             <div className="max-w-[1050px] mx-auto">
-                <div className="flex justify-between items-end mb-14 max-w-7xl mx-auto">
+                <div className="flex flex-col sm:flex-row justify-between sm:items-end items-start gap-6 mb-14 max-w-7xl mx-auto">
                     <div>
                         <h2 className="text-3xl font-bold text-white font-work">Discover More NFTs</h2>
                         <p className="text-white text-lg opacity-80 mt-2">Explore New Trending NFTs</p>
                     </div>
-                    <Button className="bg-transparent border-[#A259FF] border-2 text-white rounded-3xl px-14 py-6 h-auto flex gap-3 transition-transform hover:scale-[0.97] cursor-pointer">
+                    <Button className="w-full sm:w-auto bg-transparent border-[#A259FF] border-2 text-white rounded-3xl px-8 sm:px-14 py-6 h-auto flex gap-3 transition-transform hover:scale-[0.97] cursor-pointer">
                         <Eye className="w-5 h-5 text-[#A259FF]" />
                         See All
                     </Button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <motion.div
+                    variants={staggerContainer}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+                >
                     {Object.values(cards).map((card, index) => (
-                        <div key={index} className="bg-[#3B3B3B] rounded-3xl overflow-hidden transition-transform hover:scale-[0.97] cursor-pointer">
+                        <motion.div key={index} variants={staggerItem} className="bg-[#3B3B3B] rounded-3xl overflow-hidden transition-transform hover:scale-[0.97] cursor-pointer">
 
                             <div className="relative w-full aspect-[4/3]">
                                 <Image
@@ -88,9 +92,9 @@ export default function DiscoverMoreNFTsSection() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </motion.section>
     )

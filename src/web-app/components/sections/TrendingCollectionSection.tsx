@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from 'framer-motion';
+import { sectionReveal, staggerContainer, staggerItem } from "@/lib/animations";
 
 const cards = {
     card1: {
@@ -42,19 +43,22 @@ const cards = {
 export default function TrendingCollectionSection() {
     return (
         <motion.section
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            viewport={{ once: true }}
+            variants={sectionReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
 
             className="bg-[#2B2B2B] text-white py-10 px-4 md:px-10 lg:px-20">
             <div className="max-w-[1050px] mx-auto">
                 <h1 className="text-3xl font-semibold mb-2">Trending Collection</h1>
                 <p className="text-lg mb-10">Checkout Our Weekly Updated Trending Collection.</p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <motion.div
+                    variants={staggerContainer}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
                     {Object.values(cards).map((card, index) => (
-                        <div key={index} className="flex flex-col gap-4">
+                        <motion.div key={index} variants={staggerItem} className="flex flex-col gap-4">
 
                             <div className="relative w-full aspect-square rounded-2xl overflow-hidden cursor-pointer">
                                 <Image
@@ -95,9 +99,9 @@ export default function TrendingCollectionSection() {
                                 </div>
                             </div>
 
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </motion.section>
     );
