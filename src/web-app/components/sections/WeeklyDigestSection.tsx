@@ -37,13 +37,13 @@ export default function WeeklyDigestSection() {
                         </p>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row items-stretch gap-3">
+                    <div className="relative flex flex-col sm:flex-row items-center w-full">
                         <input
                             type="email"
                             placeholder="Enter your email here"
-                            className="w-full sm:flex-1 bg-white rounded-[20px] px-5 py-4 h-[60px] text-[#2B2B2B] outline-none placeholder:text-[#2B2B2B]/60"
+                            className="w-full bg-white rounded-[20px] px-5 py-4 h-[60px] text-[#2B2B2B] outline-none"
                         />
-                        <Button className="w-full sm:w-auto bg-[#A259FF] rounded-[20px] px-10 h-[60px] flex items-center justify-center gap-3 text-white font-semibold transition-all hover:scale-[0.97] cursor-pointer">
+                        <Button className="w-full mt-4 sm:mt-0 sm:w-auto sm:absolute right-0 bg-[#A259FF] rounded-[20px] px-10 h-[60px] flex items-center justify-center gap-3 text-white">
                             <Mail className="w-5 h-5" />
                             Subscribe
                         </Button>
