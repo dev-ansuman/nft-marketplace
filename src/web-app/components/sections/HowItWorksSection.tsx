@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from 'framer-motion';
+import { sectionReveal, staggerContainer, staggerItem } from "@/lib/animations";
 
 const cards = {
     cardA: {
@@ -24,10 +25,10 @@ const cards = {
 export default function HowItWorksSection() {
     return (
         <motion.section
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            viewport={{ once: true }}
+            variants={sectionReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
 
             className="bg-[#2B2B2B] py-20 px-10">
             <div className="max-w-[1050px] mx-auto">
@@ -36,10 +37,14 @@ export default function HowItWorksSection() {
                     <p className="text-white text-lg opacity-80">Find out how to get started</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <motion.div
+                    variants={staggerContainer}
+                    className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                >
                     {Object.values(cards).map((card, index) => (
-                        <div
+                        <motion.div
                             key={index}
+                            variants={staggerItem}
                             className="bg-[#3B3B3B] p-8 rounded-3xl flex flex-col items-center text-center gap-5"
                         >
                             <div className="relative w-full aspect-square max-w-[250px]">
@@ -58,9 +63,9 @@ export default function HowItWorksSection() {
                                     {card.description}
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </motion.section>
     );

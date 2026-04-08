@@ -38,13 +38,13 @@ export default function Footer() {
                     <h5 className='text-white text-xl font-bold'>Join Our Weekly Digest</h5>
                     <div className='flex flex-col gap-4'>
                         <p>Get exclusive promotions & updates straight to your inbox.</p>
-                        <div className='relative flex flex-col sm:flex-row items-center'>
+                        <div className='flex flex-col sm:flex-row items-stretch gap-3'>
                             <input
                                 type="email"
                                 placeholder="Enter your email here"
-                                className='w-full bg-white rounded-2xl px-5 h-[60px] text-black outline-none placeholder:text-[#2B2B2B]/60'
+                                className='w-full sm:flex-1 bg-white rounded-2xl px-5 h-[60px] text-black outline-none placeholder:text-[#2B2B2B]/60'
                             />
-                            <Button className='w-full sm:w-auto sm:absolute right-0 bg-[#A259FF] rounded-2xl px-12 h-[60px] text-white font-semibold transition-all mt-4 sm:mt-0 hover:scale-[0.97] cursor-pointer'>
+                            <Button className='w-full sm:w-auto bg-[#A259FF] rounded-2xl px-12 h-[60px] text-white font-semibold transition-all hover:scale-[0.97] cursor-pointer'>
                                 Subscribe
                             </Button>
                         </div>

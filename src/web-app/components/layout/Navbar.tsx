@@ -10,7 +10,7 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="text-white bg-[#2B2B2B] pl-[50px] pr-[50px] pt-[20px] pb-[20px] font-bold">
+        <header className="text-white bg-[#2B2B2B] px-4 sm:px-6 lg:px-12 py-5 font-bold">
             <nav className="mx-auto flex items-center justify-between">
 
                 <Link href="/" className="text-[22px] tracking-tighter flex gap-3 font-space">
@@ -50,31 +50,27 @@ export default function Navbar() {
             </nav>
 
             {open && (
-                <div className="md:hidden border-t border-black bg-white">
-                    <ul className="flex flex-col">
-                        <li className="p-4 flex gap-3">
-                            <>
-                                <Button variant="outline" className="w-full text-sm tracking-wide">
-                                    Marketplace
-                                </Button>
-                                <Button
-                                    variant="outline" className="flex-1 bg-black text-white text-sm tracking-wide"
-                                >
-                                    Rankings
-                                </Button>
-                                <Button
-                                    variant="outline" className="flex-1 bg-black text-white text-sm tracking-wide"
-                                >
-                                    Connect a wallet
-                                </Button>
-                                <Button
-                                    className="flex-1 bg-black text-white text-sm tracking-wide"
-                                >
-                                    Sign Up
-                                </Button>
-                            </>
-                        </li>
-                    </ul>
+                <div className="md:hidden mt-4 border-t border-[#3B3B3B] pt-4">
+                    <div className="flex flex-col gap-3">
+                        <Button variant="outline" className="w-full justify-start text-sm tracking-wide bg-transparent text-white border-[#3B3B3B]">
+                            Marketplace
+                        </Button>
+                        <Button
+                            variant="outline" className="w-full justify-start text-sm tracking-wide bg-transparent text-white border-[#3B3B3B]"
+                        >
+                            Rankings
+                        </Button>
+                        <Button
+                            variant="outline" className="w-full justify-start text-sm tracking-wide bg-transparent text-white border-[#3B3B3B]"
+                        >
+                            Connect a wallet
+                        </Button>
+                        <Button
+                            className="w-full bg-[#A259FF] text-sm tracking-wide"
+                        >
+                            Sign Up
+                        </Button>
+                    </div>
                 </div>
             )}
         </header>
